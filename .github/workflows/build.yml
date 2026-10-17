@@ -12,17 +12,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Setup MinGW C++ Compiler
-      uses: egor-tisin/setup-mingw@v2
 
     - name: Compile C++ to EXE
       run: |
         g++ main.cpp -o main.exe
 
-    - name: Upload EXE Artifact
+    - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
       with:
         name: main-exe
